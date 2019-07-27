@@ -4,7 +4,7 @@ import axios from 'axios';
 import { NavLink, Route, Switch, Redirect } from 'react-router-dom';
 
 import './Reg.css'
-// import {rem} from '../rem.js'
+
 
 import { Input } from 'antd';
 // import {List, InputItem, WingBlank, WhiteSpace, Button, Radio} from 'antd'
@@ -16,50 +16,73 @@ class Reg extends Component {
         this.state = {
             username: '', //账号
             pwd: '', // 密码
-            pwdConfirm: '', // 确认密码
-            type: 'worker', // 用户类型 默认求职者
+
         }
 
         this.goto = this.goto.bind(this);
         this.handleChange = this.handleChange.bind(this);
+        this.handleChangepwd = this.handleChangepwd.bind(this);
         // rem();
     }
 
     async goto() {
         console.log(1);
-        let goodlist = await axios.post("http://localhost:1904/reg");
-        // console.log(goodlist);
+        let username = this.state.username;
+        let pwd = this.state.pwd;
+        let goodlist = await axios.put("http://localhost:1904/reg", {
+            user: {
+                username: username,
+                pwd: pwd
+            }
+        })
+        let { data } = goodlist;
+        // console.log(data.data.length);
+        if (data.data.length >= 1) {
+            // console.log(this.props);
+            // let { history } = this.props;
+            // history.push('/Reg');
+            alert('我觉得不行');
+        }else{
+            let goodlist = await axios.post("http://localhost:1904/reg", {
+                user: {
+                    username: username,
+                    pwd: pwd
+                }
+            })
+            console.log(goodlist);
+        }
+      
     }
 
-    handleChange(e,key) {
+    handleChange(e, key) {
         // this.setState({
         // [key]:this.refs.input.value
         // })
         // console.log(key);
         // console.log(this.refs.input.value) 
-        
+
         this.setState({
-            'username' : e.target.value
+            'username': e.target.value
         })
-       
+
     }
 
-    handleChangepwd(e,key) {
+    handleChangepwd(e, key) {
         // this.setState({
         // [key]:this.refs.input.value
         // })
         // console.log(key);
         // console.log(this.refs.input.value) 
-        
+
         this.setState({
-            'pwd' : e.target.value
+            'pwd': e.target.value
         })
-       
+
     }
 
     componentWillMount() {
         console.log('Home.componentWillMount');
-        
+
 
     }
     componentDidMount() {
@@ -70,7 +93,7 @@ class Reg extends Component {
     }
     componentDidUpdate() {
         console.log('Home.componentDidUpdate');
-        console.log(this.state.username,this.state.pwd)
+        console.log(this.state.username, this.state.pwd)
     }
     componentWillUnmount() {
         console.log('Home.componentWillUnmount');
@@ -91,7 +114,7 @@ class Reg extends Component {
             <div className="W_content">
                 {/* <InputItem onChange={value => this.handleChange('username', value)}>lbj-账号</InputItem> */}
                 <p className="phone"><input onChange={this.handleChange.bind(this)} placeholder="请填写注册手机号" /></p>
-                <Input.Password placeholder="输入密码" onChange={this.handleChangepwd.bind(this)} size="large"/>
+                <Input.Password placeholder="输入密码" onChange={this.handleChangepwd.bind(this)} size="large" />
                 {/* <p className="phone"><input type="number" placeholder="请填写注册手机号" id="phone" /></p>
                 <p className="phone none"><input type="number" placeholder="输入密码" id="referrer_phone" /></p> */}
                 <p className="word">点击注册意味着您同意
