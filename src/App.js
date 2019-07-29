@@ -10,6 +10,7 @@ import Cart from './pages/Cart/';
 import Mine from './pages/Mine/';
 import Login from './pages/Login/';
 import Reg from './pages/Reg/';
+import Detail from './pages/Detail/';
 import Goods from './pages/Goods/index.jsx';
 
 
@@ -40,10 +41,16 @@ class App extends Component {
         name: 'Login',
         path: '/login',
         title: '登录'
-      },{
-        name: 'Reg',
-        path: '/reg',
-        title: '注册'
+      },
+      // {
+      //   name: 'Reg',
+      //   path: '/reg',
+      //   title: '注册'
+      // },
+      {
+        name: 'Detail',
+        path: '/detail',
+        title: '详情'
       }]
     }
 
@@ -63,6 +70,23 @@ class App extends Component {
   render() {
 
     return <div>
+    
+      <Switch>
+        {/* <Route path="/" component={Home} exact/> */}
+        <Route path="/home" component={Home} />
+        <Route path="/list" component={List} />
+        <Route path="/cart" component={Cart} />
+        <Route path="/mine" component={Mine} />
+        <Route path="/login" component={Login} />
+        <Route path="/reg" component={Reg} />
+        <Route path="/detail" component={Detail} />
+
+        {/* 动态路由 */}
+        {/* <Route path="/goods/:id" component={Goods}/>
+                  <Route path="/404" render={()=><div>oh no 404</div>}/>
+                  <Redirect from="/" to="/home" exact/>
+                  <Redirect from="/*" to="/404"/> */}
+      </Switch>
       <div className="foot">
         <Radio.Group size='large' onChange={this.handleSizeChange}>
           {
@@ -74,21 +98,6 @@ class App extends Component {
           }
         </Radio.Group>
       </div>
-      <Switch>
-        {/* <Route path="/" component={Home} exact/> */}
-        <Route path="/home" component={Home} />
-        <Route path="/list" component={List} />
-        <Route path="/cart" component={Cart} />
-        <Route path="/mine" component={Mine} />
-        <Route path="/login" component={Login} />
-        <Route path="/reg" component={Reg} />
-
-        {/* 动态路由 */}
-        {/* <Route path="/goods/:id" component={Goods}/>
-                  <Route path="/404" render={()=><div>oh no 404</div>}/>
-                  <Redirect from="/" to="/home" exact/>
-                  <Redirect from="/*" to="/404"/> */}
-      </Switch>
     </div>
   }
 }
