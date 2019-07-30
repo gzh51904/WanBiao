@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 // import logo from './logo.svg';
-import { Button, Radio, Icon } from 'antd';
+import {Radio} from 'antd';
 import { Switch, Route, Redirect , withRouter } from 'react-router-dom';
 import './App.scss';
 
@@ -11,8 +11,11 @@ import Mine from './pages/Mine/';
 import Login from './pages/Login/';
 import Reg from './pages/Reg/';
 import Detail from './pages/Detail/';
-import Goods from './pages/Goods/index.jsx';
+// import Goods from './pages/Goods/index.jsx';
 
+import Search from './pages/Home/search';
+import CustomerService from './pages/Home/answer/customerService'
+import News from './pages/News'
 
 
 
@@ -26,32 +29,34 @@ class App extends Component {
         path: '/home',
         title: '首页'
       }, {
-        name: 'List',
-        path: '/list',
-        title: '列表'
+        name: 'Search',
+        path: '/search',
+        title: '搜索'
+      },{
+        name: 'Detail',
+        path: '/detail',
+        title: '详情'
       }, {
         name: 'Cart',
         path: '/cart',
         title: '购物车'
-      }, {
-        name: 'Mine',
-        path: '/mine',
-        title: '我的'
-      }, {
+      },
+      //  {
+      //   name: 'Mine',
+      //   path: '/mine',
+      //   title: '我的'
+      // }, 
+      {
         name: 'Login',
         path: '/login',
         title: '登录'
-      },
+      }
       // {
       //   name: 'Reg',
       //   path: '/reg',
       //   title: '注册'
       // },
-      {
-        name: 'Detail',
-        path: '/detail',
-        title: '详情'
-      }]
+     ]
     }
 
     // 改变this指向
@@ -73,7 +78,7 @@ class App extends Component {
     
       <Switch>
         {/* <Route path="/" component={Home} exact/> */}
-        <Route path="/home" component={Home} />
+        {/* <Route path="/home" component={Home} /> */}
         <Route path="/list" component={List} />
         <Route path="/cart" component={Cart} />
         <Route path="/mine" component={Mine} />
@@ -81,13 +86,25 @@ class App extends Component {
         <Route path="/reg" component={Reg} />
         <Route path="/detail" component={Detail} />
 
+        <Route path="/home" component={Home} exact/>
+        <Route path='/news/home/recommend' component={News} exact/> 
+        <Redirect from='/news' to='/news/home/recommend' exact/>
+        <Redirect from='/news/home' to='/news/home/recommend' exact/>
+        <Route path='/news/:id' component={News}/>
+        <Route path='/search' component={Search} exact/> 
+        <Route path='/customerService' component={CustomerService} exact/>
+        <Route path='/404' render={()=><div>404 Not Found</div>}/>
+        <Route path='/wanbiao' component={Home} exact/>
+        <Redirect from='/' to='/home' exact/>
+        <Redirect from='/*' to='/404'/>
+
         {/* 动态路由 */}
         {/* <Route path="/goods/:id" component={Goods}/>
                   <Route path="/404" render={()=><div>oh no 404</div>}/>
                   <Redirect from="/" to="/home" exact/>
                   <Redirect from="/*" to="/404"/> */}
       </Switch>
-      <div className="foot">
+      <div className="foot" >
         <Radio.Group size='large' onChange={this.handleSizeChange}>
           {
             this.state.navs.map(item => {

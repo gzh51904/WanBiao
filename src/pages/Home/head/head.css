@@ -1,0 +1,47 @@
+.head-contain{
+    height: 50px;
+}
+.headbox{
+    height: 50px;
+    width: 100%;
+    position: fixed;
+    z-index: 1001;
+    background: #fff;
+    overflow: hidden;
+    left: 0;
+    top: 0;
+}
+.head-logobox{
+    width:71px;
+    text-align: center;
+}
+.head-logo{
+    width: 48px;
+    height: 24px;
+    margin-top: 13px;
+    margin-left: 11px;
+}
+
+.head-search{
+    border-radius: 16px;
+    background: #f1f1f1;
+    color: #999;
+    font-size: 12px;
+    height: 24px;
+    line-height: 24px;
+    margin: 13px 0;
+}
+.head-search-icon{
+    margin: 0 10px 0 10px;
+}
+.head-imgbox{
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    overflow: hidden;  
+    margin-top: 13px;
+    margin-left: 20px;
+}
+.head-img{
+    width:100%;
+}

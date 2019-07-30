@@ -206,7 +206,7 @@
     }
     
     .shopping{clear:both;overflow:hidden;height:auto;padding-bottom: 100px;}
-.shop-group-item{margin-bottom:5px;}
+.shop-group-item{margin-bottom:5px;margin-top: 10px;}
 .shop-group-item ul li{border-bottom:1px solid #fff;}
 .shop-group-item ul li:last-child{border-bottom:none;}
 
@@ -244,4 +244,4 @@
 .payment-bar .shop-total{float:left;-webkit-box-flex:1.0;box-flex:1.0;margin:9px 20px 9px 35px;}
 .payment-bar .shop-total strong{display:block;font-size:16px;}
 .payment-bar .shop-total span{display:block;font-size:12px;}
-.payment-bar .settlement{display:inline-block;float:right;width:100px;height:49px;line-height:49px;text-align:center;color:#fff;font-size:16px;background:#f23030;}
+.payment-bar .settlement{display:inline-block;float:right;width:90px;height:49px;line-height:49px;text-align:center;color:#fff;font-size:16px;background:#f23030;}

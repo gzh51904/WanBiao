@@ -1,0 +1,28 @@
+.brand-listbox{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 100%;
+}
+.brand-list{
+    width: 32%;
+    height: 80px;
+    margin: 5px 0;
+    background: rgba(220, 220, 220, .2);
+    border-radius: 8px;
+    text-align: center;
+}
+.brand-listtitle{
+    font-size: 14px;
+    line-height: 14px;
+    margin-top: 28px;
+    margin-bottom: 2px;
+    font-weight: 700;
+    color: #666;
+}
+.brand-listname{
+    font-size: 12px;
+    line-height: 12px;
+    transform: scale(.8);
+    color: #ccc;
+}

@@ -1,0 +1,27 @@
+.nhheadbox{
+    position: relative;
+    left: 0;
+    top: 0;
+    height: 44px;
+    background: #262626;
+    border-bottom: 2px solid #d1af67;
+    /* padding: 15px 0; */
+}
+.nhhead-back{
+    width: 90px;
+    height: 44px;
+    color: white;
+    line-height: 44px;
+    margin-left: 15px;
+    float: left;
+}
+.nhhead-title{
+    margin: 0 auto;
+    width: 75px;
+    font-size: 18px;
+    height: 44px;
+    font-weight: 700;
+    line-height: 44px;
+    color: #d1af67;
+    transform: scaleY(.9)
+}

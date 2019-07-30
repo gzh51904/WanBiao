@@ -1,0 +1,24 @@
+.itemize-listbox{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:space-around;
+    height: 100px;
+    width: 100%;
+    padding: 12px 0;
+    box-sizing: border-box;
+}
+.itemize-list{
+    width:22%;
+    text-align:center;
+}
+.itemize-listimg{
+    width: 44px;
+    height: 44px;
+    margin-left: 18px;
+}
+.itemize-listtitle{
+    font-size: 12px;
+    line-height: 12px;
+    height: 12px;
+    margin-top: 5px;
+}

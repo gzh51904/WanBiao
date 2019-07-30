@@ -1,0 +1,13 @@
+.answerbox{
+    position:fixed;
+    text-align: center;
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    line-height: 40px;
+    right: 0;
+    top:80%;
+    margin-right: 5px;
+    background: #fff;
+    border-radius: 50%;
+}

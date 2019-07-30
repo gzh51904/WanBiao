@@ -1,0 +1,28 @@
+.nhc-list{
+    padding: 15px;
+    border-bottom: 1px solid #f1f1f1;
+}
+.nhc-list-title{
+    font-size: 16px;
+    color: #333;
+    line-height: 24px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.nhc-list-img{
+    margin-top: 10px;
+    background: #d8d8d8;
+    border-radius: 3px;
+    width: 100%;
+    height: 250px;
+    border: none;
+}
+.nhc-list-footbox{
+    margin-top: 5px;
+    font-size: 12px;
+    color: #999;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}

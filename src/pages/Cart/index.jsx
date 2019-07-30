@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import './Cart.css';
 
 import axios from 'axios';
+import { totalmem } from 'os';
 
 class Cart extends Component {
 
@@ -10,14 +11,66 @@ class Cart extends Component {
         super();
 
         this.state = {
-            
-                img: [],
-                price: [],
-                name: []
-            
 
+            cart: [],
+            current: false
         }
+        this.total = this.total.bind(this);
+        // this.add = this.add.bind(this);
+    }
 
+    total() {
+        let i = 0
+        this.state.cart.map(item => { i = i + item.price * item.num * 1 })
+        return i
+    }
+
+    add(name, num) {
+        console.log(this, name, num);
+        // this.state.cart.map((item,idx)=>{
+        //     if(item.name==name){
+        //         this.setState((preState,props)=>({
+
+        //             name:preState.num+1
+
+        //             }))
+
+        // }})
+
+
+        this.state.cart.forEach(item => {
+            if (item.name === name) {
+                item.num = item.num * 1 + 1
+            }
+            return item
+        })
+        this.setState({
+            current: !this.state.current
+        })
+
+
+        // this.state.cart.num
+    }
+
+    reduce(name, num) {
+        console.log(this, name, num);
+
+
+        this.state.cart.forEach(item => {
+            if (item.name === name) {
+                if (item.num != 0) {
+                    item.num = item.num * 1 - 1
+                }
+
+            }
+            return item
+        })
+        this.setState({
+            current: !this.state.current
+        })
+
+
+        // this.state.cart.num
     }
 
     async componentWillMount() {
@@ -32,17 +85,28 @@ class Cart extends Component {
         //     price:price,
         //     name:name
         //   });
+        let cart = [];
         for (let i = 0; i < goodlist.data.data.length; i++) {
-            this.setState({
-                    img: goodlist.data.data[i].img,
-                    price: goodlist.data.data[i].price,
-                    name: goodlist.data.data[i].name
-            });
+            // this.setState({
+            //         img: goodlist.data.data[i].img,
+            //         price: goodlist.data.data[i].price,
+            //         name: goodlist.data.data[i].name
+            // });
+
             // this.state.name.push(goodlist.data.data[i].name);
             // this.state.price.push(goodlist.data.data[i].price);
-            // this.state.img.push(goodlist.data.data[i].img);
-            // console.log(this.state);
+
+            let str = {
+                img: goodlist.data.data[i].img,
+                price: goodlist.data.data[i].price,
+                name: goodlist.data.data[i].name,
+                num: goodlist.data.data[i].num
+            }
+            cart.push(str);
+            // console.log(this.state.img[0]);
+            // console.log(cart);
         }
+        this.setState({ cart })
         console.log(this.state);
 
 
@@ -68,7 +132,7 @@ class Cart extends Component {
 
             </div>
             <main>
- 
+
                 <div className="shopping">
 
                     <div className="shop-group-item" >
@@ -83,18 +147,18 @@ class Cart extends Component {
                         </div>
                         <ul>
 
-                            <li>
+                            {/* <li>
                                 <div className="shop-info">
                                     <input type="checkbox" className="check goods-check goodsCheck" />
                                     <div className="shop-info-img">
-                                        <img src={this.state.img} alt=""/>
+                                        <img alt="" />
                                         <a href="#"></a>
                                     </div>
                                     <div className="shop-info-text">
-                                        <h4>{this.state.name}</h4>
+                                        <h4></h4>
                                         <div className="shop-brief"><span v-text="s.intro"></span></div>
                                         <div className="shop-price">
-                                            <div className="shop-pices">￥<b className="price" >{this.state.price}</b></div>
+                                            <div className="shop-pices">￥<b className="price" ></b></div>
                                             <div className="shop-arithmetic">
                                                 <a href="javascript:;" className="minus">-</a>
                                                 <span className="num" v-text="s.qty">1</span>
@@ -103,23 +167,45 @@ class Cart extends Component {
                                         </div>
                                     </div>
                                 </div>
-                            </li>
+                            </li> */}
+                            {
 
-                      
-
-
-
+                                // console.log(this.state.cart) 
+                                this.state.cart.map(item => {
+                                    return <li>
+                                        <div className="shop-info">
+                                            <input type="checkbox" className="check goods-check goodsCheck" />
+                                            <div className="shop-info-img">
+                                                <img src={item.img} alt="" />
+                                                <a href="#"></a>
+                                            </div>
+                                            <div className="shop-info-text">
+                                                <h4></h4>
+                                                <div className="shop-brief"><span v-text="s.intro">{item.name}</span></div>
+                                                <div className="shop-price">
+                                                    <div className="shop-pices">￥{item.price}<b className="price" ></b></div>
+                                                    <div className="shop-arithmetic">
+                                                        <a href="javascript:;" className="minus" onClick={this.reduce.bind(this, item.name, item.num)}>-</a>
+                                                        <span className="num" >{item.num}</span>
+                                                        <a href="javascript:;" className="plus" onClick={this.add.bind(this, item.name, item.num)}>+</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                })
+                            }
 
 
                         </ul>
-                        <div className="shopPrice">本店总计：￥<span className="shop-total-amount ShopTotal">0.00</span></div>
+                        <div className="shopPrice" >本店总计：￥<span className="shop-total-amount ShopTotal">{this.total()}</span></div>
                     </div>
                 </div>
 
                 <div className="payment-bar">
                     <div className="all-checkbox"><input type="checkbox" className="check goods-check" id="AllCheck" />全选</div>
                     <div className="shop-total">
-                        <strong>总价：<i className="total" id="AllTotal">0.00</i></strong>
+                        <strong>总价：<i className="total" id="AllTotal">{this.total()}</i></strong>
                         <span>减免：123.00</span>
                     </div>
                     <a href="#" className="settlement">结算</a>

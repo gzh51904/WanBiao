@@ -1,0 +1,96 @@
+.auctionlist-box{
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    margin: 34px 8px 0 8px;
+}
+.auctionlist-listbox{
+    height: 180px;
+    width: 40%;
+    text-align: center;
+    position: relative;
+    flex: none;
+}
+.auctionlist-img{
+    width: 112px;
+    height: 112px;
+    margin: 0 auto;
+}
+.auctionlist-counddown{
+    position: absolute;
+    top: 102px;
+    left: 50%;
+    transform: translate(-50%);
+    background: linear-gradient(270deg,#f26161 0,#cc3d3d 100%);
+    border-radius: 8px;
+    padding: 0 3px;
+}
+.auctionlist-icon{
+    width: 12px;
+    height: 12px;
+    transform: scale(.8);
+    float: left;
+    margin-top: 2px;
+    margin-right: 5px;
+}
+.auctionlist-timer{
+    font-size: 12px;
+    color: #fff;
+    line-height: 16px;
+    float: left;
+}
+.acutionlist-pricebox{
+    text-align: center;
+    font-size: 12px;
+    color: #cc3d3d;
+    line-height: 12px;
+    margin-top: 21px;
+}
+.auctionlist-newprice{
+    font-size: 12px;
+    font-weight: 700;
+}
+.auctionlist-name{
+    font-size: 14px;
+    color: #666;
+    line-height: 14px;
+    text-align: center;
+    margin-top: 8px;
+    overflow: hidden;
+}
+.auctionlist-morebox{
+    height: 180px;
+    width: 40%;
+    text-align: center;
+    position: relative;
+    flex: none;
+}
+.auctionlist-moreimg{
+    width: 112px;
+    height: 112px;
+    border-radius: 30px;
+    background: #f1f1f1;
+    margin: 0 auto;
+}
+.auctionlist-moreicon{
+    font-size: 44px;
+    height: 44px;
+    margin-top: 34px;
+}
+.auctionlist-moretitle{
+    text-align: center;
+    font-size: 14px;
+    color: #666;
+    line-height: 20px;
+    font-weight: 700;
+    margin: 0;
+    margin-top: 17px;
+}
+.auctionlist-moremore{
+    margin: 0;
+    margin-top: 2px;
+    text-align: center;
+    color: #999;
+    font-size: 12px;
+    line-height: 14px;
+}

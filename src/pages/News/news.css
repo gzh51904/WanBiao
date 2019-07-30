@@ -1,0 +1,31 @@
+
+.nhn-nlistbox{
+    height: 50px;
+    display: flex;
+    justify-content: space-around;
+    background: #262626;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    z-index: 1000;
+}
+.nhn-nlist{
+    color: #999;
+    text-align: center;
+}
+.nhn-nlhigh{
+    color:#d1af67;
+}
+.nhn-nicon{
+    width: 25px;
+    height: 25px;
+    font-size: 25px;
+    line-height: 25px;
+    margin-top: 2px;
+}
+.nhn-ntitle{
+    font-size: 12px;
+}

@@ -1,0 +1,16 @@
+.titleHead-box{
+    margin: 16px 0 14px 0;
+}
+.titleHead-content{
+    font-size: 16px;
+    color: #333;
+    text-align: center;line-height: 16px;
+    margin-bottom: 12px;
+    font-weight: 700;
+}
+.titleHead-line{
+    background:#ccaa7a;
+    width:24px;
+    height:2px;
+    margin:0 auto
+}

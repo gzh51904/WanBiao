@@ -12,7 +12,8 @@ class List extends Component {
         this.state = {
             img: '/assets/shangou2.jpg',
             price:100,
-            name:''
+            name:'',
+            num:'',
         }
 
     }
@@ -28,7 +29,7 @@ class List extends Component {
         this.setState({
             img: '/assets/'+img,
             price:price,
-            name:name
+            name:name,
           });
        
     }
@@ -37,7 +38,8 @@ class List extends Component {
         let goodlist = await axios.post("http://localhost:1904/goods",{
                img:this.state.img,
                price:this.state.price,
-               name:this.state.name
+               name:this.state.name,
+               num:1
         });
         console.log(goodlist);
     }

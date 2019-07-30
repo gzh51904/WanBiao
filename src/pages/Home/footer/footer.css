@@ -1,0 +1,79 @@
+.footer-listbox{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 0;
+    overflow: hidden;
+}
+.footer-list{
+    width: 46%;
+    margin-bottom: 40px;
+}
+.footer-imgbox{
+    height: 220px;
+    margin-bottom: 14px;
+    text-align: center;
+    position: relative;
+}
+.footer-listimg{
+    height:100%;
+    width: auto;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.footer-price{
+    padding: 8px 8px 4px 0;
+    margin-bottom: 4px;
+    white-space: nowrap;
+    justify-content: space-around;
+}
+.footer-price-premonth{
+    padding: 2px 4px;
+    background: linear-gradient(270deg,#ff8080 0,#e65c5c 100%);
+    border-radius: 2px;
+    font-size: 12px;
+    transform: scale(.9);
+    color: #fff;
+    display: inline-block;
+}
+.footer-newprice{
+    margin-right: 10px;
+    font-family: 'DIN-Bold','微软雅黑';
+    font-size: 14px;
+    color: #e65c5c;
+}
+.footer-oldprice{
+    font-family: 'DIN-Bold','微软雅黑';
+    font-size: 14px;
+    color: #666;
+    position: relative;
+}
+.footer-price-shu::before{
+    content: '';
+    width: 1px;
+    height: 12px;
+    background: #ddd;
+    position: absolute;
+    top: 4px;
+    left: -5px;
+}
+.footer-describe{
+    font-size: 12px;
+    color: #666;
+    line-height: 18px;
+}
+.footer-special{
+    width: 100%;
+}
+.footer-special-content{
+    border: 1px solid #d90000;
+    border-radius: 2px;
+    font-size: 12px;
+    transform: scale(.82);
+    text-align: center;
+    padding: 1px 4px;
+    margin-left: 4px;
+    color: #d90000;
+    display: inline-block;
+}

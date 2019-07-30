@@ -35,8 +35,9 @@ class Login extends Component {
         if(data.data.length>=1){
             console.log(this.props);
             let {history} = this.props;
-            history.push('/Reg');
-        }
+            alert('登陆成功');
+            history.push('/Home');
+        }else(alert('我觉得不行'))
     }
 
     handleChange(e,key) {
@@ -88,10 +89,10 @@ class Login extends Component {
                             <p className="phone"><em>密码</em>
                                 <input   type="tel" placeholder="请输入密码" className="phone_num" onChange={this.handleChangepwd.bind(this)}/>
                             </p>
-                            <p className="note"> <em>验证码</em>
+                            {/* <p className="note"> <em>验证码</em>
                                 <input   type="tel"  className="note_code" />
                                 <a href="javascript:void(0);" id="sendCode"  ></a>
-                            </p>
+                            </p> */}
                         </div>
                         <a className="login" id="mobile_login"onClick={this.goto.bind()}>立即登录</a>
 

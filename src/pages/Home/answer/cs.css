@@ -1,0 +1,133 @@
+.cs{
+    height: 100%;
+}
+.cs-head{
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 10000;
+    text-align: center;
+    background: rgb(251, 199, 168);
+}
+.cs-head-icon{
+    margin: 16px 10px;
+    transform: scale(1.5);
+}
+.cs-head-iconhide{
+    visibility: hidden;
+}
+.cs-tangtang{
+    font-weight: bold;
+    line-height: 44px;
+    height: 44px;
+}
+.cs-main{
+    margin-top: 44px;
+    margin-bottom: 39px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.cs-reply-listbox{
+    margin-bottom: 20px;
+}
+.cs-reply-avatarbox{
+    width: 100%;
+    height: 44px;
+}
+.cs-reply-avatarleft{
+    margin-left: 15px;
+}
+.cs-reply-avatarright{
+    float: right;
+    margin-right: 25px;
+}
+.cs-reply-avatar{
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.cs-reply-img{
+    width:100%;
+}
+.cs-reply-before{
+    position: relative;
+    margin-left: 25px;
+}
+.cs-reply-listleft::before{
+    content:'';
+    height: 0;
+    width: 0;
+    border: 5px solid transparent;
+    border-top: 5px solid #ccc;
+    border-right: 5px solid #ccc;
+    position: absolute;
+    top: -7px;
+    left: 0;
+    transform-origin: 0 0;
+    transform: rotate(45deg)
+}
+.cs-reply-listright::before{
+    content:'';
+    height: 0;
+    width: 0;
+    border: 5px solid transparent;
+    border-top: 5px solid #ccc;
+    border-left: 5px solid #ccc;
+    position: absolute;
+    top: 0px;
+    right: 37px;
+    transform-origin: 0 0;
+    transform: rotate(-45deg)
+}
+.cs-reply-list{
+    margin-top: 10px;
+    background: transparent;
+    border: 1px solid #ccc;
+    padding: 6px;
+    background: #ccc;
+    margin-right: 60px;
+    border-radius: 5px;
+    font-size: 14px;
+}
+.cs-reply-listright{
+    margin-right: 40px;
+    margin-left: 20px;
+}
+.cs-reply-content{
+    margin-bottom: 0;
+}
+.cs-footer{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 39px;
+    display: flex;
+    justify-content: space-around;
+    overflow: hidden;
+    background:#fff;
+    z-index: 1000;
+}
+.cs-footer-input{
+    width: 60%;
+    outline: none;
+}
+.cs-footer-icon{
+    font-size: 33px;
+    line-height: 39px;
+    width: 10%;
+    margin-top: 3px;
+    color: rgb(250, 205, 178);
+}
+.cs-footer-btn{
+    width: 20%;
+    font-size: 12px;
+    line-height: 39px;
+    border: 1px solid rgb(250, 205, 178);
+    background: rgb(250, 205, 178)
+}

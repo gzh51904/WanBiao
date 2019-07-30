@@ -50,6 +50,7 @@ class Reg extends Component {
                 }
             })
             console.log(goodlist);
+            alert('注册成功');
         }
       
     }
